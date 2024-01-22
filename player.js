@@ -60,5 +60,35 @@ document.getElementById('play').addEventListener('click', function () {
     }
   });
   
-  //volume bar
-  
+  //Controlli volume bar
+  document.addEventListener('DOMContentLoaded', function() {
+    const volumeBar = document.getElementById('volume-bar');
+    const volumeProgress = document.getElementById('volumeProgress');
+
+    volumeBar.addEventListener('mousedown', function(e) {
+        // Start the dragging process
+        updateVolumeProgress(e);
+
+        function onMouseMove(e) {
+            updateVolumeProgress(e);
+        }
+
+        function onMouseUp() {
+            //Rimuove gli eventi in ascolto quando lo scroll termina
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+
+        // Aggiunge gli eventi mousemove e mouseup
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
+
+    function updateVolumeProgress(e) {
+        const volumeBarRect = volumeBar.getBoundingClientRect();
+        let newWidth = e.clientX - volumeBarRect.left;
+        let percentage = newWidth / volumeBarRect.width;
+        percentage = Math.max(0, Math.min(1, percentage)); // Clamp between 0 and 1
+        volumeProgress.style.width = (percentage * 100) + '%';
+    }
+});
