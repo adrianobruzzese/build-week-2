@@ -32,9 +32,9 @@ const generateTrack = (trackInfo) => {
     container.classList.add("container", "d-flex", "justify-content-between");
     container.innerHTML = `
   <div class="col-1">
-    <p>${info.nb_tracks}</p>
+    <p class="text-end me-2">${info.nb_tracks}</p>
   </div>
-  <div class="col-6">${info.title}</div>
+  <div class="col-6">${info.title}<br/><span class="text-white-50">${info.artist}</span></div>
   <div class="col-3">${info.rank}</div>
   <div class="col-2">${info.duration}</div>
   </div>`;
@@ -84,6 +84,7 @@ const fetchFunction = function () {
             .padStart(2, "0")}`,
           rank: track.rank.toLocaleString(),
           nb_tracks: allTracks.length + 1,
+          artist: track.artist.name,
         };
         allTracks.push(trackInfo);
       }
