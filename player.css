@@ -1,0 +1,181 @@
+@import url(//db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book);
+* {
+  box-sizing: border-box;
+  font-family: "circular std book", sans-serif;
+}
+
+body {
+  --primary-color: #ddd;
+  --secondary-color: #999;
+  --green-color: #2d5;
+  --padding: 0.8em;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  font-size: 14px;
+}
+
+.music-player {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 5.5rem;
+  padding: var(--padding);
+  color: var(--primary-color);
+}
+
+i {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+i:hover {
+  color: var(--primary-color);
+}
+
+.green-class {
+  color: var(--green-color);
+}
+
+.song-bar {
+  position: absolute;
+  left: var(--padding);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 25%;
+}
+
+.song-infos {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.image-container {
+  --size: 4.5em;
+  flex-shrink: 0;
+  width: var(--size);
+  height: var(--size);
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.song-description p {
+  margin: 0.2em;
+}
+
+.title,
+.artist {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.title:hover,
+.artist:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.artist {
+  color: var(--secondary-color);
+}
+
+.icons {
+  display: flex;
+  gap: 1em;
+}
+
+.progress-controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--secondary-color);
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+}
+
+#play {
+  font-size: 34px;
+}
+
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.progress-bar {
+  height: 4px;
+  border-radius: 10px;
+  width: 30%;
+  background-color: rgba(204, 204, 204, 0.2666666667);
+  cursor: pointer;
+}
+
+.progress {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+}
+
+.progress-bar:hover .progress {
+  background-color: var(--green-color);
+}
+
+.progress-bar:hover .progress::after {
+  content: "";
+  position: absolute;
+  --size: 1em;
+  width: var(--size);
+  height: var(--size);
+  right: 0;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: translate(50%, calc(2px - 50%));
+}
+
+.other-features {
+  position: absolute;
+  right: var(--padding);
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.volume-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  cursor: pointer;
+}
+
+.volume-bar .progress-bar {
+  width: 6em;
+}
+
+.volume-bar .progress-bar:hover .progress::after {
+  --size: 0.8em;
+}/*# sourceMappingURL=player.css.map */

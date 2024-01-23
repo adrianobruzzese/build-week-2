@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spotify music player</title>
+        <link rel="stylesheet" href="player.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <div class="music-player">
+            <div class="song-bar">
+                <div class="song-infos">
+                    <div class="image-container">
+                        <img src="assets/image-1.jpg" alt="" />
+                    </div>
+                    <div class="song-description">
+                        <p class="title">
+                            Lorem Ipsum
+                        </p>
+                        <p class="artist">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="bi bi-heart greenable"></i>
+                    <i class="bi bi-fullscreen-exit"></i>
+                </div>
+            </div>
+            <div class="progress-controller">
+                <div class="control-buttons">
+                    <i class="bi bi-shuffle greenable"></i>
+                    <i class="bi bi-skip-backward-fill"></i>
+                    <i class="bi bi-play-circle-fill" id="play"></i>                 
+<i class="bi bi-skip-forward-fill"></i>
+                    <i class="bi bi-repeat greenable"></i>
+                </div>
+                <div class="progress-container">
+                    <span id="currentTime">4:27</span>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <span id="totalTime">15:15</span>
+                </div>
+            </div>
+            <div class="other-features">
+                <i class="bi bi-list-ul greenable"></i>
+                <i class="bi bi-display greenable"></i>
+                <div class="volume-bar">
+                    <i class="fas fa-volume-down"></i>
+                    <div class="progress-bar" id="volume-bar">
+                        <div class="progress" id="volumeProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="player.js"></script>
+    </body>
+</html>
