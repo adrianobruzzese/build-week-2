@@ -41,6 +41,12 @@ position: relative;
     background-color: rgb(40, 40, 40);
     height: 1000px;
   }
+  .circle{
+    position: relative;
+    /* width: 50%; 
+    max-width: 300px;
+    margin: auto; */
+  }
   .imgCircle {
     width: 80px; 
     height: 80px; 
@@ -49,11 +55,14 @@ position: relative;
     background-image: url('https://www.dire.it/wp-content/uploads/2022/09/PINGUINI-TATTICI-NUCLEARI.jpeg');
     background-size: cover;
     background-position: center;
-    position: relative;
+    /* position: relative; */
   }
   .heart{
-    width: 40px; 
-    height: 40px; 
+    width: 30%; 
+    max-width: 30px;
+    height: 30%;
+    max-height: 40px;
+    /* height: 40px;  */
     border-radius: 50%; 
     border: 1px solid white;
     overflow: hidden; 
@@ -63,8 +72,9 @@ position: relative;
     position: absolute;
     /* top: 0;
     right: 0; */
-    bottom: 212px;
-    left: 60px;
+    bottom: 5%;
+    /* left: 60px; */
+    right: 5%;
   }
   footer {
     
