@@ -1,4 +1,4 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/album/134367092";
 
 const generateAlbum = (data) => {
   const hero = document.getElementById("hero");
