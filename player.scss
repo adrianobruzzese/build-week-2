@@ -159,3 +159,8 @@ i:hover {
 .volume-bar .progress-bar:hover .progress::after {
   --size: 0.8em;
 }
+ .music-player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+ }
