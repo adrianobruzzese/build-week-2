@@ -88,7 +88,21 @@ document.getElementById('play').addEventListener('click', function () {
         const volumeBarRect = volumeBar.getBoundingClientRect();
         let newWidth = e.clientX - volumeBarRect.left;
         let percentage = newWidth / volumeBarRect.width;
-        percentage = Math.max(0, Math.min(1, percentage)); // Clamp between 0 and 1
+        percentage = Math.max(0, Math.min(1, percentage));
         volumeProgress.style.width = (percentage * 100) + '%';
     }
 });
+
+//funzione per mostrare il player se clicchi su una canzone
+// document.addEventListener('DOMContentLoaded', function() {
+//   const player = document.querySelector('.music-player');
+
+//   // Aggiungi il codice per gestire il clic su una canzone
+//   // Ad esempio: se le canzoni abbiano la classe 'song'
+//   const songs = document.querySelectorAll('.song');
+//   songs.forEach(song => {
+//       song.addEventListener('click', function() {
+//           player.classList.add('show'); // Mostra il player
+//       });
+//   });
+// });
