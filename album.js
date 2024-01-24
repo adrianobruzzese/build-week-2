@@ -1,5 +1,25 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/album/134367092";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
 
+const generatePlayer = (data) => {
+  const player = document.getElementById("song");
+  const track = document.createElement("div");
+  track.classList.add("song-infos");
+  track.innerHTML = `
+  <div class="image-container">
+    <img src="${data.cover}" alt="" />
+  </div>
+  <div class="song-description">
+    <p class="title">${data.title}</p>
+    <p class="artist">
+      ${data.artist}
+    </p>
+  </div>
+  <div class="icons">
+    <i class="bi bi-heart greenable"></i>
+    <i class="bi bi-fullscreen-exit"></i>
+  </div>`;
+  player.appendChild(track);
+};
 const generateAlbum = (data) => {
   const hero = document.getElementById("hero");
   const container = document.createElement("div");
@@ -90,6 +110,14 @@ const fetchFunction = function () {
       }
       generateTrack(allTracks);
       console.log(allTracks);
+
+      /* Oggetto player con generazione grafica */
+      const players = {
+        title: data.title,
+        artist: data.artist.name,
+        cover: data.cover,
+      };
+      generatePlayer(players);
     })
     .catch((error) => {
       console.error(error.message);
