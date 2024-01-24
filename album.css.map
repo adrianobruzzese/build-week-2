@@ -1,1 +1,1 @@
-{"version":3,"sources":["album.scss","album.css"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,QAAA;EACA,MAAA;EACA,SAAA;EACA,yBAAA;EACA,aAAA;EACA,YAAA;ACCJ","file":"album.css"}
+{"version":3,"sources":["album.scss","album.css"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,SAAA;EACA,sBAAA;ACCF;;ADGA;EACI,eAAA;EACA,QAAA;EACA,MAAA;EACA,SAAA;EACA,yBAAA;EACA,aAAA;EACA,YAAA;ACAJ","file":"album.css"}
