@@ -17,7 +17,8 @@ const generatePlayer = (data) => {
   <div class="icons">
     <i class="bi bi-heart greenable"></i>
     <i class="bi bi-fullscreen-exit"></i>
-  </div>`;
+  </div>
+  `;
   player.appendChild(track);
 };
 const generateAlbum = (data) => {
@@ -118,6 +119,7 @@ const fetchFunction = function () {
         cover: data.cover,
       };
       generatePlayer(players);
+      console.log(players);
     })
     .catch((error) => {
       console.error(error.message);
