@@ -1,15 +1,23 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+html {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .sidebar-end {
-  position: fixed;
+  /* position: fixed;
   right: 0;
   top: 0;
-  bottom: 0;
-  background-color: #000000;
+  bottom: 0; */
+  background-color: #121212;
   padding: 24px;
-  width: 300px;
+  height: 100%;
+}
+
+#main {
+  margin-bottom: 100px;
+}
+
+#central {
+  background: rgb(171, 53, 138);
+  background: linear-gradient(180deg, rgb(171, 53, 138) 0%, rgb(18, 18, 18) 50%, rgb(18, 18, 18) 100%);
 }/*# sourceMappingURL=album.css.map */

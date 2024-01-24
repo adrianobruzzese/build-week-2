@@ -19,147 +19,35 @@
     <title>Spotify</title>
   </head>
   <body>
-    <main class="text-white" style="margin-bottom: 100px">
+    <main class="text-white" id="main">
       <section>
         <article>
           <div class="mt-3">
             <div class="row">
               <!-- Menù a sinistra -->
               <div class="col-3">
-                <div class="sidebar">
-                  <div class="logo">
-                    <a href="#">
-                      <img
-                        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
-                        alt="Logo"
-                      />
-                    </a>
+                <div class="sidebar-end rounded rounded-3">
+                  <div
+                    class="navigation d-flex justify-content-between align-items-center"
+                  >
+                    <h6>Attività amici</h6>
+                    <div class="d-flex">
+                      <h4><i class="bi bi-person-plus me-1"></i></h4>
+                      <h4><i class="bi bi-x me-1"></i></h4>
+                    </div>
                   </div>
-
-                  <div class="navigation">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-house"></i>
-                          <!-- icona placeholder in attesa di procurarsi quella corretta -->
-
-                          <span>Home</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-search"></i>
-                          <span>Cerca</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-collection"></i>
-                          <!-- icona placeholder in attesa di procurarsi quella corretta -->
-                          <span>La tua libreria</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="navigation">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-plus-square-fill"></i>
-                          <span>Crea playlist</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-heart-fill"></i>
-                          <span>Brani che ti piacciono</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#">
-                          <i class="bi bi-bookmark-star-fill"></i>
-                          <span>I tuoi episodi</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="playlist">
-                    <ul>
-                      <li>
-                        <a href="#">Hello World</a>
-                      </li>
-                      <li>
-                        <a href="#">Hermit's Grove</a>
-                      </li>
-                      <li>
-                        <a href="#">Music to expand your h...</a>
-                      </li>
-                      <li>
-                        <a href="#">Late Night Jazz</a>
-                      </li>
-                      <li>
-                        <a href="#">Music for working from...</a>
-                      </li>
-                      <li>
-                        <a href="#">Under the Radar: Neo S...</a>
-                      </li>
-                      <li>
-                        <a href="#">The Plug 🔌: Neo R&B</a>
-                      </li>
-                      <li>
-                        <a href="#">Music for Floating</a>
-                      </li>
-                      <li>
-                        <a href="#">Changing Lights</a>
-                      </li>
-                      <li>
-                        <a href="#">is this what you wanted?</a>
-                      </li>
-                      <li>
-                        <a href="#">Arctic Monkeys: Live at Roya...</a>
-                      </li>
-                      <li>
-                        <a href="#">Piombo: Italian Crime S...</a>
-                      </li>
-                      <li>
-                        <a href="#">Boom! Italian 40s Cinema Jazz</a>
-                      </li>
-                      <li>
-                        <a href="#">Closer</a>
-                      </li>
-                      <li>
-                        <a href="#">Something good can come</a>
-                      </li>
-                      <li>
-                        <a href="#">Ianus a stare</a>
-                      </li>
-                      <li>
-                        <a href="#">Vineria Sonora</a>
-                      </li>
-                      <li>
-                        <a href="#">Desert Sessions</a>
-                      </li>
-                      <li>
-                        <a href="#">In Times New Roman</a>
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="navigation"></div>
+                  <div class="policies"></div>
                 </div>
               </div>
               <!-- Centrale -->
-              <div class="col-7 text-white" id="central">
+              <div class="col-7 text-white rounded rounded-3" id="central">
                 <div class="row" id="hero">
                   <div class="d-flex justify-content-start align-items-center">
-                    <h5 class="me-1 mb-4">
+                    <h5 class="me-1 mt-3 mb-4">
                       <i class="bi bi-arrow-left-circle"></i>
                     </h5>
-                    <h5 class="ms-1 mb-4">
+                    <h5 class="ms-1 mt-3 mb-4">
                       <i class="bi bi-arrow-right-circle"></i>
                     </h5>
                   </div>
@@ -238,7 +126,7 @@
                 </div>
                 <div id="tracks" class="row mt-3">
                   <div
-                    class=" pe-1 m-0 text-end col-1 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="pe-1 m-0 text-end col-1 border border-bottom-1 border-top-0 border-start-0 border-end-0"
                   >
                     <p>#</p>
                   </div>
@@ -248,23 +136,24 @@
                     TITOLO
                   </div>
                   <div
-                    class=" p-0 m-0 text-start col-3 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="p-0 m-0 text-start col-3 border border-bottom-1 border-top-0 border-start-0 border-end-0"
                   >
                     RIPRODUZIONE
                   </div>
                   <div
-                    class=" p-0 m-0 col-2 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="p-0 m-0 col-2 border border-bottom-1 border-top-0 border-start-0 border-end-0"
                   >
                     <i class="bi bi-clock"></i>
                   </div>
                 </div>
+
                 <div id="tracks" class="row">
                   <!-- Inserisco tracks da js -->
                 </div>
               </div>
               <!-- Menù a destra -->
-              <div class="col-3">
-                <div class="sidebar-end">
+              <div class="col-2">
+                <div class="sidebar-end rounded rounded-3">
                   <div
                     class="navigation d-flex justify-content-between align-items-center"
                   >
@@ -274,8 +163,102 @@
                       <h4><i class="bi bi-x me-1"></i></h4>
                     </div>
                   </div>
-                  <div class="navigation"></div>
-                  <div class="policies"></div>
+                  <div class="navigation">
+                    <div class="row mt-5">
+                      <div class="col-2">
+                        <img
+                          class="rounded rounded-circle"
+                          src="https://placehold.co/30"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h6>Liborio Daniele Frasca</h6>
+                        <p class="font-small">Gothic Metal</p>
+                        <p>
+                          <i class="bi bi-vinyl me-2"></i> Ultimo brano
+                          ascoltato: 1 ora fa
+                        </p>
+                      </div>
+                      <div class="col-2"><p>1 Ora</p></div>
+                    </div>
+                    <hr />
+                    <div class="row mt-5">
+                      <div class="col-2">
+                        <img
+                          class="rounded rounded-circle"
+                          src="https://placehold.co/30"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h6>Adriano Bruzzese</h6>
+                        <p class="font-small">Pop</p>
+                        <p>
+                          <i class="bi bi-vinyl me-2"></i> Ultimo brano
+                          ascoltato: 7 ore fa
+                        </p>
+                      </div>
+                      <div class="col-2"><p>7 Ore</p></div>
+                    </div>
+                    <hr />
+                    <div class="row mt-5">
+                      <div class="col-2">
+                        <img
+                          class="rounded rounded-circle"
+                          src="https://placehold.co/30"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h6>Alex</h6>
+                        <p class="font-small">Metal</p>
+                        <p>
+                          <i class="bi bi-vinyl me-2"></i> Ultimo brano
+                          ascoltato: 10 ore fa
+                        </p>
+                      </div>
+                      <div class="col-2"><p>10 Ore</p></div>
+                    </div>
+                    <hr />
+                    <div class="row mt-5">
+                      <div class="col-2">
+                        <img
+                          class="rounded rounded-circle"
+                          src="https://placehold.co/30"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h6>Davide Paderi</h6>
+                        <p class="font-small">Punk</p>
+                        <p>
+                          <i class="bi bi-vinyl me-2"></i> Ultimo brano
+                          ascoltato: 21 ore fa
+                        </p>
+                      </div>
+                      <div class="col-2"><p>21 Ore</p></div>
+                    </div>
+                    <hr />
+                    <div class="row mt-5">
+                      <div class="col-2">
+                        <img
+                          class="rounded rounded-circle"
+                          src="https://placehold.co/30"
+                          alt=""
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h6>Giulio Chiarenza</h6>
+                        <p class="font-small">Rock</p>
+                        <p>
+                          <i class="bi bi-vinyl me-2"></i> Ultimo brano
+                          ascoltato: 23 ore fa
+                        </p>
+                      </div>
+                      <div class="col-2"><p>23 Ore</p></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -299,7 +282,7 @@
             <div class="progress-bar" id="progressBar">
               <div class="progress" id="progress"></div>
             </div>
-            <span id="totalTime">0:25</span>
+            <span id="totalTime"></span>
           </div>
         </div>
         <div class="other-features">

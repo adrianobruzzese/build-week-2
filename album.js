@@ -17,9 +17,10 @@ const generatePlayer = (data) => {
   <div class="icons">
     <i class="bi bi-heart greenable"></i>
     <i class="bi bi-fullscreen-exit"></i>
-  </div>
-  `;
+  </div>`;
   player.appendChild(track);
+  const duration = document.getElementById("totalTime");
+  duration.innerHTML = `${data.duration}`;
 };
 const generateAlbum = (data) => {
   const hero = document.getElementById("hero");
@@ -27,13 +28,13 @@ const generateAlbum = (data) => {
   container.classList.add("container", "d-flex", "justify-content-between");
   container.innerHTML = `
     <div class="col-3">
-      <img src="${data.cover}" alt="coverAlbum" width="150px" height="150px" />
+      <img src="${data.cover}" alt="coverAlbum" width="250px" height="250px" />
     </div>
-    <div class="col-9">
+    <div class="col-9 d-flex flex-column justify-content-end align-items-start">
       <div class="row"><p>${data.type}</p></div>
       <div class="row"><h1>${data.title}</h1></div>
       <div class="row">
-      <div class="col-12 d-flex justify-content-start align-items-center ">
+      <div class="col-12 d-flex justify-content-start align-items-center">
       <img class="me-1 rounded rounded-circle" src="${data.picture}" alt="coverArtist" style="height:30px; width:30px;"/>
             <p class="m-0" id="nameArtist">${data.artist} &middot;</p>
             <p class="m-0" id="year">${data.release_date} &middot;</p>
@@ -106,20 +107,14 @@ const fetchFunction = function () {
           rank: track.rank.toLocaleString(),
           nb_tracks: allTracks.length + 1,
           artist: track.artist.name,
+          cover: data.cover,
         };
         allTracks.push(trackInfo);
       }
       generateTrack(allTracks);
       console.log(allTracks);
-
       /* Oggetto player con generazione grafica */
-      const players = {
-        title: data.title,
-        artist: data.artist.name,
-        cover: data.cover,
-      };
-      generatePlayer(players);
-      console.log(players);
+      generatePlayer(allTracks[0]);
     })
     .catch((error) => {
       console.error(error.message);
