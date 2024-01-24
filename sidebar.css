@@ -18,9 +18,17 @@ body {
   background-color: #000000;
   padding: 20px;
 }
+@media (max-width: 768px) {
+  
+  .sidebar{
+    max-width: 1px;
+    background-color: #121212;
+  }
+}
 .sidebar .logo img {
   width: 120px;
 }
+
 
 .navigation:nth-of-type(3) {
   border-bottom: 0.5px solid grey;
