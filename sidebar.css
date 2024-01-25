@@ -3,7 +3,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'circular std book', sans-serif;
+  font-family: "circular std book", sans-serif;
 }
 body {
   background-color: #121212;
@@ -29,12 +29,12 @@ body {
   .hidden {
     display: none;
   }
-  .sidebar{
+  .sidebar {
     max-width: 1px;
     background-color: #121212;
     padding: 0;
   }
-  
+
   .fixed-bottom-bar {
     position: fixed;
     bottom: 0;
@@ -61,7 +61,6 @@ body {
 .sidebar .logo img {
   width: 120px;
 }
-
 
 .navigation:nth-of-type(3) {
   border-bottom: 0.5px solid grey;
