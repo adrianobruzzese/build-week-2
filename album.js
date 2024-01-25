@@ -102,7 +102,7 @@ const generateTrack = (trackInfo) => {
       <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">${
       info.artist.name
     }</span></div>
-      <div class="col-3 p-2 opacity-50">${info.rank}</div>
+      <div class="col-3 p-2 opacity-50">${formattedRank}</div>
       <div class="col-2 p-2 opacity-50">${minuti}:${secondiFormattati}</div>
     `;
     container.addEventListener("click", handleClick);
