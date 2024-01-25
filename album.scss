@@ -1,7 +1,10 @@
-html {
-  margin-left: 10px;
-  margin-right: 10px;
+*{
   box-sizing: border-box;
+}
+.dx{
+  font-size: 8px;
+  padding: 0;
+  margin: 0;
 }
 .sidebar-end {
     background-color: #121212;
@@ -9,58 +12,53 @@ html {
     padding: 24px;
     height: 100%;
   }
-  .sidebar-end .logo img {
+  .sidebar-start .logo img {
     margin-left: 1rem;
     width: 120px;
   }
   .navigation:nth-of-type(3) {
     border-bottom: 0.5px solid grey;
   }
-  .sidebar-end .navigation ul {
+  .sidebar-start .navigation ul {
     list-style: none;
     margin-top: 15px;
-    padding-left: 1rem;
   }
-  .sidebar-end .navigation ul li {
-    padding: 5px 0px;
-  }
-  .sidebar-end .navigation ul li a {
+  .sidebar-start .navigation ul li a {
     color: #b3b3b3;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
   }
-  .sidebar-end .navigation ul li a:hover,
-  .sidebar-end .navigation ul li a:active,
-  .sidebar-end .navigation ul li a:focus,
-  .sidebar-end .navigation ul li a:hover .bi,
-  .sidebar-end .navigation ul li a:active .bi,
-  .sidebar-end .navigation ul li a:focus .bi {
+  .sidebar-start .navigation ul li a:hover,
+  .sidebar-start .navigation ul li a:active,
+  .sidebar-start .navigation ul li a:focus,
+  .sidebar-start .navigation ul li a:hover .bi,
+  .sidebar-start .navigation ul li a:active .bi,
+  .sidebar-start .navigation ul li a:focus .bi {
     color: #ffffff;
   }
   
-  .sidebar-end .navigation ul li .bi {
+  .sidebar-start .navigation ul li .bi {
     font-size: 1.2rem;
-    margin-right: 7px;
   }
-  .sidebar-end .playlist ul {
+  .sidebar-start .playlist ul {
     list-style: none;
     margin-top: 15px;
   }
-  .sidebar-end .playlist ul li a {
+  .sidebar-start .playlist ul li a {
     color: #b3b3b3;
     font-weight: 500;
     text-decoration: none;
     font-size: 1rem;
   }
-  .sidebar-end .playlist ul li a:hover,
-  .sidebar-end .playlist ul li a:active,
-  .sidebar-end .playlist ul li a:focus {
+  .sidebar-start .playlist ul li a:hover,
+  .sidebar-start .playlist ul li a:active,
+  .sidebar-start .playlist ul li a:focus {
     text-decoration: underline;
     color: #ffffff;
   }
   #main{
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
 
   #central{ 
@@ -104,4 +102,43 @@ html {
 }
 .font{
   font-size: 12px;
+}
+.trackList {
+  cursor: pointer; 
+}
+.trackList:hover {
+  background-color: rgba(128, 128, 128, 0.675);
+}
+@media (max-width: 768px) {
+  .hidden {
+    display: none;
+  }
+  .sidebar{
+    max-width: 1px;
+    background-color: #121212;
+    padding: 0;
+  }
+  
+  .fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212; /* Colore di sfondo se necessario */
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Ombra sottile */
+    z-index: 1000; /* Z-index per assicurarsi che sia sopra il resto del contenuto */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px; /* Aggiungi spaziatura interna se necessario */
+  }
+
+  .fixed-bottom-bar li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .fixed-bottom-bar a {
+    text-decoration: none;
+    color: #ffffff; /* Colore del testo */
+  }
 }
