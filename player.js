@@ -92,34 +92,47 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeProgress.style.width = percentage * 100 + "%";
   }
 });
-
-const audio = new Audio(
-  "https://cdns-preview-9.dzcdn.net/stream/c-9e208326d4114be07cbadc20ee8394c8-8.mp3"
-);
-console.log(audio);
+console.log("daje", sessionStorage.getItem("albumCorrente"));
+const audio = new Audio();
 let isPlaying = false;
+
 const playMusic = () => {
   if (!isPlaying) {
-    audio.play();
-    isPlaying = true;
-    audio.addEventListener("loadedmetadata", function () {
-      document.getElementById("totalTime").textContent = formatTime(
-        audio.duration
-      );
-    });
-    setInterval(function () {
-      const currentTime = audio.currentTime;
-      const duration = audio.duration;
+    const albumCorrente = sessionStorage.getItem("albumCorrente");
 
-      document.getElementById("currentTime").textContent =
-        formatTime(currentTime);
-      updateProgressBar(currentTime, duration);
-    }, 1000 + 1);
+    if (albumCorrente) {
+      audio.pause();
+      audio.src = albumCorrente;
+      audio.play();
+
+      isPlaying = true;
+
+      audio.addEventListener("loadedmetadata", function () {
+        document.getElementById("totalTime").textContent = formatTime(
+          audio.duration
+        );
+      });
+
+      audio.addEventListener("timeupdate", function () {
+        const currentTime = audio.currentTime;
+        const duration = audio.duration;
+
+        document.getElementById("currentTime").textContent =
+          formatTime(currentTime);
+        updateProgressBar(currentTime, duration);
+      });
+    } else {
+      console.error("Errore: albumCorrente non presente in sessionStorage");
+    }
   } else {
     audio.pause();
     isPlaying = false;
   }
 };
+
+// Chiamata alla funzione playMusic quando necessario
+// playMusic();
+
 const updateProgressBar = (currentTime, duration) => {
   const percentage = (currentTime / duration) * 100;
   document.getElementById("progress").style.width = `${percentage}%`;

@@ -1,6 +1,6 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/13";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/9172904";
 const urlTracklist =
-  "https://striveschool-api.herokuapp.com/api/deezer/artist/13/top?limit=50";
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/9172904/top?limit=50";
 
 const fetchF = () => {
   fetch(url, {
