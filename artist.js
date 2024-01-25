@@ -20,7 +20,7 @@ const fetchF = () => {
       const nameArtist = document.getElementById("name-artist");
       nameArtist.innerText = data.name;
       const ascoltatori = document.getElementById("listener");
-      ascoltatori.innerText = "Ascoltatori" + " " + data.nb_fan;
+      ascoltatori.innerText = "Follower" + " " + data.nb_fan;
       const imageArtist = document.getElementById("artistImg");
       imageArtist.src = data.picture_medium;
     })
@@ -58,8 +58,8 @@ const fetchTrack = () => {
       trackList.appendChild(listSong);
       const cardContainer = document.getElementById("card-song");
       cardContainer.innerHTML = `
-<div class="card border-0 bg-transparent pt-3" style='width:200px'>
-  <img src="${track.data[0].album.cover}" class="card-img-top w-100 rounded-circle" alt="...">
+<div class="card border-0 bg-transparent pt-3 align-items-center" style='width:200px'>
+  <img src="${track.data[0].album.cover}" class="card-img-top w-50 rounded-circle" alt="...">
   <div class="card-body text-center text-white ">
     <h5 class="card-title">${track.data[0].title}</h5>
     <p class="card-text">${track.data[0].album.title}</p>
@@ -72,3 +72,28 @@ const fetchTrack = () => {
     });
 };
 fetchTrack();
+
+function changeButtonText() {
+  const btn = document.getElementById("btn-change");
+  if (btn.innerText === "Segui") {
+    // Cambia il testo del bottone a 'Seguito'
+    btn.innerText = "Seguito";
+  } else {
+    // Se il testo non è 'Segui', cambialo nuovamente a 'Segui'
+    btn.innerText = "Segui";
+  }
+}
+
+function changeBtnPlay() {
+  const btnPlay = document.getElementById("play-pause");
+  if (
+    btnPlay.innerHTML ===
+    `<i class="bi bi-play-circle-fill text-success fs-1"></i>`
+  ) {
+    // Cambia il testo del bottone a 'Seguito'
+    btnPlay.innerHTML = `<i class="bi bi-pause-circle-fill text-success fs-1"></i>`;
+  } else {
+    // Se il testo non è 'Segui', cambialo nuovamente a 'Segui'
+    btnPlay.innerHTML = `<i class="bi bi-play-circle-fill text-success fs-1"></i>`;
+  }
+}
