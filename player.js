@@ -93,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+// File della pagina successiva (pagina.html)
+
 const audio = new Audio(
   "https://cdns-preview-9.dzcdn.net/stream/c-9e208326d4114be07cbadc20ee8394c8-8.mp3"
 );

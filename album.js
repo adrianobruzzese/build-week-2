@@ -1,7 +1,5 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
 let trackInfo;
-
-const fetchAlbumData = () => {
+const fetchFunction = () => {
   return fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -14,19 +12,9 @@ const fetchAlbumData = () => {
       return null;
     });
 };
-
-const initializeAlbum = () => {
-  fetchAlbumData().then((albumData) => {
-    if (albumData) {
-      trackInfo = albumData.tracks.data;
-      generateAlbum(albumData);
-      generateTrack(trackInfo);
-    }
-  });
-};
-
 //Generazione Album
 const generateAlbum = (data) => {
+  const releaseYear = new Date(data.release_date).getFullYear();
   const hero = document.getElementById("hero");
   const container = document.createElement("div");
   container.classList.add("container", "d-flex", "justify-content-between");
@@ -35,32 +23,35 @@ const generateAlbum = (data) => {
       <img src="${data.cover}" alt="coverAlbum" width="250px" height="250px" />
     </div>
     <div class="col-9 d-flex flex-column justify-content-end align-items-start">
-      <div class="row"><p>${data.type}</p></div>
+      <div class="row"><p>${data.type.toUpperCase()}</p></div>
       <div class="row"><h1>${data.title}</h1></div>
       <div class="row">
         <div class="col-12 d-flex justify-content-start align-items-center">
-          <img class="me-1 rounded rounded-circle" src="${data.artist.picture}" alt="coverArtist" style="height:30px; width:30px;"/>
+          <img class="me-1 rounded rounded-circle" src="${
+            data.artist.picture
+          }" alt="coverArtist" style="height:30px; width:30px;"/>
           <p class="m-0" id="nameArtist">${data.artist.name} &middot;</p>
-          <p class="m-0" id="year">${data.release_date} &middot;</p>
+          <p class="m-0" id="year">${releaseYear} &middot;</p>
           <p class="m-0">${data.nb_tracks} brani,
-            <span>${data.duration}</span>
+            <span>${formattedDuration}</span>
           </p>
         </div>
       </div>
     </div>`;
   hero.appendChild(container);
 };
-
 //Generazione Track
 const generateTrack = (trackInfo) => {
   const tracks = document.getElementById("tracks");
   trackInfo.forEach((info, index) => {
+
+    const formattedRank = info.rank.toLocaleString();
     const container = document.createElement("div");
     container.classList.add(
       "container",
       "d-flex",
       "justify-content-between",
-      "mt-3",
+      "mt-1",
       "trackList"
     );
     container.setAttribute("data-id", info.id);
@@ -71,14 +62,13 @@ const generateTrack = (trackInfo) => {
       <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">${
       info.artist.name
     }</span></div>
-      <div class="col-3 p-2 opacity-50">${info.rank}</div>
-      <div class="col-2 p-2 opacity-50">${info.duration}</div>
+      <div class="col-3 p-2 opacity-50">${formattedRank}</div>
+      <div class="col-2 p-2 opacity-50">${formattedDuration}</div>
     `;
     container.addEventListener("click", handleClick);
     tracks.appendChild(container);
   });
 };
-
 //Generazione Player
 const generatePlayer = (data) => {
   const player = document.getElementById("song");
@@ -99,7 +89,6 @@ const generatePlayer = (data) => {
   player.innerHTML = "";
   player.appendChild(track);
 };
-
 //Gestione click su traccia
 const handleClick = (event) => {
   const trackId = event.currentTarget.getAttribute("data-id");
@@ -111,5 +100,15 @@ const handleClick = (event) => {
     generatePlayer(selectedTrack, trackId);
   }
 };
-
+//Inizializzazione Album
+const initializeAlbum = () => {
+  fetchFunction().then((albumData) => {
+    if (albumData) {
+      trackInfo = albumData.tracks.data;
+      generateAlbum(albumData);
+      generateTrack(trackInfo);
+    }
+  });
+};
+//Inizializzazione Player
 initializeAlbum();
