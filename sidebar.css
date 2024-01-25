@@ -62,13 +62,6 @@ body {
 .navigation:nth-of-type(3) {
   border-bottom: 0.5px solid grey;
 }
-.sidebar .logo img {
-  margin-left: 1rem;
-  width: 120px;
-}
-.navigation:nth-of-type(3) {
-  border-bottom: 0.5px solid grey;
-}
 .sidebar .navigation ul {
   list-style: none;
   margin-top: 15px;
