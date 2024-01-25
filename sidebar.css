@@ -18,11 +18,44 @@ body {
   background-color: #000000;
   padding: 20px;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   
   .sidebar{
     max-width: 1px;
     background-color: #121212;
+  }
+} */
+@media (max-width: 768px) {
+  .hidden {
+    display: none;
+  }
+  .sidebar{
+    max-width: 1px;
+    background-color: #121212;
+    padding: 0;
+  }
+  
+  .fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212; /* Colore di sfondo se necessario */
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Ombra sottile */
+    z-index: 1000; /* Z-index per assicurarsi che sia sopra il resto del contenuto */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px; /* Aggiungi spaziatura interna se necessario */
+  }
+
+  .fixed-bottom-bar li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .fixed-bottom-bar a {
+    text-decoration: none;
+    color: #ffffff; /* Colore del testo */
   }
 }
 .sidebar .logo img {
