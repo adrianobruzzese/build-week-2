@@ -1,25 +1,31 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
+let trackInfo;
 
-const generatePlayer = (data) => {
-  const player = document.getElementById("song");
-  const track = document.createElement("div");
-  track.classList.add("song-infos");
-  track.innerHTML = `
-  <div class="image-container">
-    <img src="${data.cover}" alt="" />
-  </div>
-  <div class="song-description">
-    <p class="title">${data.title}</p>
-    <p class="artist">
-      ${data.artist}
-    </p>
-  </div>
-  <div class="icons">
-    <i class="bi bi-heart greenable"></i>
-    <i class="bi bi-fullscreen-exit"></i>
-  </div>`;
-  player.appendChild(track);
+const fetchAlbumData = () => {
+  return fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Errore nel recupero dei dati dell'album");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error(error.message);
+      return null;
+    });
 };
+
+const initializeAlbum = () => {
+  fetchAlbumData().then((albumData) => {
+    if (albumData) {
+      trackInfo = albumData.tracks.data;
+      generateAlbum(albumData);
+      generateTrack(trackInfo);
+    }
+  });
+};
+
+//Generazione Album
 const generateAlbum = (data) => {
   const hero = document.getElementById("hero");
   const container = document.createElement("div");
@@ -32,93 +38,78 @@ const generateAlbum = (data) => {
       <div class="row"><p>${data.type}</p></div>
       <div class="row"><h1>${data.title}</h1></div>
       <div class="row">
-      <div class="col-12 d-flex justify-content-start align-items-center">
-      <img class="me-1 rounded rounded-circle" src="${data.picture}" alt="coverArtist" style="height:30px; width:30px;"/>
-            <p class="m-0" id="nameArtist">${data.artist} &middot;</p>
-            <p class="m-0" id="year">${data.release_date} &middot;</p>
-            <p class="m-0">${data.nb_tracks} brani,
-              <span>${data.duration}</span>
-            </p>
-            </div>
-            </div>
+        <div class="col-12 d-flex justify-content-start align-items-center">
+          <img class="me-1 rounded rounded-circle" src="${data.artist.picture}" alt="coverArtist" style="height:30px; width:30px;"/>
+          <p class="m-0" id="nameArtist">${data.artist.name} &middot;</p>
+          <p class="m-0" id="year">${data.release_date} &middot;</p>
+          <p class="m-0">${data.nb_tracks} brani,
+            <span>${data.duration}</span>
+          </p>
+        </div>
       </div>
     </div>`;
   hero.appendChild(container);
 };
+
+//Generazione Track
 const generateTrack = (trackInfo) => {
   const tracks = document.getElementById("tracks");
-  trackInfo.forEach((info) => {
+  trackInfo.forEach((info, index) => {
     const container = document.createElement("div");
-    container.classList.add("container", "d-flex", "justify-content-between","mt-3");
+    container.classList.add(
+      "container",
+      "d-flex",
+      "justify-content-between",
+      "mt-3",
+      "trackList"
+    );
+    container.setAttribute("data-id", info.id);
     container.innerHTML = `
-  <div class="col-1">
-    <p class="text-end me-2">${info.nb_tracks}</p>
-  </div>
-  <div class="col-6">${info.title}<br/><span class="opacity-50">${info.artist}</span></div>
-  <div class="col-3 opacity-50">${info.rank}</div>
-  <div class="col-2 opacity-50">${info.duration}</div>
-  </div>`;
+      <div class="col-1 p-2">
+        <p class="text-end me-2">${index + 1}</p>
+      </div>
+      <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">${
+      info.artist.name
+    }</span></div>
+      <div class="col-3 p-2 opacity-50">${info.rank}</div>
+      <div class="col-2 p-2 opacity-50">${info.duration}</div>
+    `;
+    container.addEventListener("click", handleClick);
     tracks.appendChild(container);
   });
 };
-const fetchFunction = function () {
-  fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Riscontrato errore");
-      }
-    })
-    .then((data) => {
-      console.log(data);
-      /* Oggetto albums con generazione grafica */
-      const albums = {
-        title: data.title,
-        artist: data.artist.name,
-        cover: data.cover,
-        duration: `${Math.floor(data.duration / 60)}:${(data.duration % 60)
-          .toString()
-          .padStart(2, "0")}`,
-        picture: data.artist.picture,
-        release_date: new Date(data.release_date).getFullYear(),
-        nb_tracks: data.nb_tracks,
-        tracks: data.tracks,
-        type: data.type.toUpperCase(),
-      };
-      generateAlbum(albums);
-      console.log(albums);
 
-      /* Oggetto tracks con generazione grafica */
-      const allTracks = [];
-      for (let i = 0; i < data.tracks.data.length; i++) {
-        const track = data.tracks.data[i];
-        const trackInfo = {
-          title: track.title,
-          duration: `${Math.floor(track.duration / 60)}:${(track.duration % 60)
-            .toString()
-            .padStart(2, "0")}`,
-          rank: track.rank.toLocaleString(),
-          nb_tracks: allTracks.length + 1,
-          artist: track.artist.name,
-          cover: data.cover,
-          preview: track.preview,
-        };
-        allTracks.push(trackInfo);
-      }
-      generateTrack(allTracks);
-      console.log(allTracks);
-      /* Oggetto player con generazione grafica */
-      generatePlayer(allTracks[1]);
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
+//Generazione Player
+const generatePlayer = (data) => {
+  const player = document.getElementById("song");
+  const track = document.createElement("div");
+  track.classList.add("song-infos");
+  track.innerHTML = `
+    <div class="image-container">
+      <img src="${data.album.cover}" alt="" />
+    </div>
+    <div class="song-description">
+      <p class="title">${data.title}</p>
+      <p class="artist">${data.artist.name}</p>
+    </div>
+    <div class="icons">
+      <i class="bi bi-heart greenable"></i>
+      <i class="bi bi-fullscreen-exit"></i>
+    </div>`;
+  player.innerHTML = "";
+  player.appendChild(track);
 };
 
-fetchFunction();
+//Gestione click su traccia
+const handleClick = (event) => {
+  const trackId = event.currentTarget.getAttribute("data-id");
+  console.log("Hai cliccato sulla traccia con ID:", trackId);
+  if (trackInfo) {
+    const selectedTrack = trackInfo.find(
+      (track) => track.id === parseInt(trackId)
+    );
+    generatePlayer(selectedTrack, trackId);
+  }
+};
+
+initializeAlbum();

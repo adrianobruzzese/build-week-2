@@ -185,8 +185,3 @@ i:hover {
   bottom: 0;
   width: 100%;
 }/*# sourceMappingURL=player.css.map */
-@media (max-width: 768px) {
-.music-player {
-  bottom: 75px;
-}
-  }
