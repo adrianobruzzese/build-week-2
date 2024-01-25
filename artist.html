@@ -37,7 +37,7 @@
               <div class="navigation">
                 <ul class="fixed-bottom-bar">
                   <li>
-                    <a href="#">
+                    <a href="home.html">
                       <i class="bi bi-house-door-fill"></i>
                       <!-- icona placeholder in attesa di procurarsi quella corretta -->
 
@@ -161,19 +161,25 @@
                 </div> -->
               </div>
 
-              <div class="col ms-5 text-white">
-                <h1 class="ms-5" id="name-artist"></h1>
-                <p class="ms-5 fs-6" id="listener"></p>
+              <div class="col text-white">
+                <h1 id="name-artist"></h1>
+                <p class="fs-6 text-secondary" id="listener"></p>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-12 my-3">
+              <div class="col-12 my-3 d-flex align-items-center">
                 <span
-                  ><a href=""
+                  ><a id="play-pause" onclick="changeBtnPlay()" href="#"
                     ><i class="bi bi-play-circle-fill text-success fs-1"></i></a
                 ></span>
-                <button class="btn btn-dark text-light">seguiti</button>
+                <button
+                  id="btn-change"
+                  class="btn btn-dark text-light px-4 mx-4 border-1 border-secondary rounded-5"
+                  onclick="changeButtonText()"
+                >
+                  Segui
+                </button>
                 <span
                   ><a href=""><i class="bi bi-three-dots fs-1"></i></a
                 ></span>

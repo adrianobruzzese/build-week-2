@@ -1,7 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/860c3ec7bbc5da3e97233ccecafe512e?family=Circular+Std+Book);
 
-*{
-  font-family: 'circular std book', sans-serif;
+* {
+  font-family: "circular std book", sans-serif;
 }
 main {
   background: #3a3a3a;
@@ -72,9 +72,24 @@ main {
   font-size: 0.7em;
 }
 @media (max-width: 768px) {
-  .bpmd{
+  .bpmd {
     margin: 0 !important;
     padding: 0 !important;
   }
 }
-
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: #ffff;
+}
