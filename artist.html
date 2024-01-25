@@ -23,7 +23,7 @@
     <main>
       <div class="container-fluid">
         <div class="row">
-          <aside class="col col-md-2 pe-1">
+          <aside class="col col-md-2 pe-0">
             <div class="sidebar">
               <div class="logo hidden">
                 <a href="#">
@@ -150,49 +150,48 @@
               </div>
             </div>
           </aside>
-          <section class="col-12 col-md-10 ps-2">
-            <div id="artistImg">
-              <div>
-                <i class="bi bi-arrow-left-circle-fill text-dark ms-5 fs-1"></i>
+          <section class="col-12 col-md-10 ps-0">
+            <div class="row align-items-center py-5 bg-custom">
+              <div class="col text-center">
+                <img src="" alt="" id="artistImg" />
+                <!-- <div>
+                  <i
+                    class="bi bi-arrow-left-circle-fill text-dark ms-5 fs-1"
+                  ></i>
+                </div> -->
               </div>
-              <div class="ms-5">
-                <h1 class="ms-5">Pinguini Tattici Nucleari</h1>
-                <p class="ms-5 fs-6">00000000 ascoltatori mensili</p>
+
+              <div class="col ms-5 text-white">
+                <h1 class="ms-5" id="name-artist"></h1>
+                <p class="ms-5 fs-6" id="listener"></p>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-12 mt-5 d-flex align-items-center">
+              <div class="col-12 my-3">
                 <span
                   ><a href=""
-                    ><i
-                      class="bi bi-play-circle-fill text-success fs-1 ms-5"
-                    ></i></a
+                    ><i class="bi bi-play-circle-fill text-success fs-1"></i></a
                 ></span>
-                <button class="btn btn-dark text-light ms-3">seguiti</button>
+                <button class="btn btn-dark text-light">seguiti</button>
                 <span
-                  ><a href=""><i class="bi bi-three-dots ms-3 fs-1"></i></a
+                  ><a href=""><i class="bi bi-three-dots fs-1"></i></a
                 ></span>
               </div>
               <div class="col-12 col-md-8 text-light">
                 <h2>Popolari</h2>
-                <ol>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                  <li><a href=""></a></li>
-                </ol>
+                <div id="tracklist"></div>
               </div>
               <div class="col-12 col-md-4 text-light">
                 <h2>Brani che ti piacciono</h2>
+                <div id="card-song"></div>
               </div>
             </div>
           </section>
         </div>
       </div>
     </main>
-    <footer>
+    <footer class="m-custom">
       <div class="music-player">
         <div class="song-bar">
           <div class="song-infos">
@@ -240,5 +239,6 @@
       </div>
     </footer>
     <script src="player.js"></script>
+    <script src="./artist.js"></script>
   </body>
 </html>
