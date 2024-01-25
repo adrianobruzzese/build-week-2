@@ -1,15 +1,63 @@
 html {
   margin-left: 10px;
   margin-right: 10px;
+  box-sizing: border-box;
 }
 .sidebar-end {
-    /* position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0; */
     background-color: #121212;
+    color: #b3b3b3;
     padding: 24px;
     height: 100%;
+  }
+  .sidebar-end .logo img {
+    margin-left: 1rem;
+    width: 120px;
+  }
+  .navigation:nth-of-type(3) {
+    border-bottom: 0.5px solid grey;
+  }
+  .sidebar-end .navigation ul {
+    list-style: none;
+    margin-top: 15px;
+    padding-left: 1rem;
+  }
+  .sidebar-end .navigation ul li {
+    padding: 5px 0px;
+  }
+  .sidebar-end .navigation ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .sidebar-end .navigation ul li a:hover,
+  .sidebar-end .navigation ul li a:active,
+  .sidebar-end .navigation ul li a:focus,
+  .sidebar-end .navigation ul li a:hover .bi,
+  .sidebar-end .navigation ul li a:active .bi,
+  .sidebar-end .navigation ul li a:focus .bi {
+    color: #ffffff;
+  }
+  
+  .sidebar-end .navigation ul li .bi {
+    font-size: 1.2rem;
+    margin-right: 7px;
+  }
+  .sidebar-end .playlist ul {
+    list-style: none;
+    margin-top: 15px;
+  }
+  .sidebar-end .playlist ul li a {
+    color: #b3b3b3;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .sidebar-end .playlist ul li a:hover,
+  .sidebar-end .playlist ul li a:active,
+  .sidebar-end .playlist ul li a:focus {
+    text-decoration: underline;
+    color: #ffffff;
   }
   #main{
     margin-bottom: 100px;
@@ -19,3 +67,41 @@ html {
     background: rgb(171,53,138);
     background: linear-gradient(180deg, rgba(171,53,138,1) 0%, rgba(18,18,18,1) 50%, rgba(18,18,18,1) 100%);
   }
+.scroll-snap-y {
+  scroll-snap-type: y mandatory proximity;
+  height: 100vh; 
+  overflow-y: hidden;
+  transition: overflow-y 2s ease;
+}
+.scroll-snap-y:hover {
+  overflow-y: scroll;
+}
+
+.scroll-snap-y > div {
+  scroll-snap-align: start;
+  margin-bottom: 60px; 
+}
+.scroll-snap-y::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-snap-y::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.scroll-snap-y::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+.color-green{
+  background: #23b26b;
+}
+.border-radius-100{
+  border-radius: 100%;
+}
+.text-bg-ternary{
+  background-color: #12121249;
+  color: #ffffff;
+}
+.font{
+  font-size: 12px;
+}

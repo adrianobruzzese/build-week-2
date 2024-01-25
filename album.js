@@ -19,8 +19,6 @@ const generatePlayer = (data) => {
     <i class="bi bi-fullscreen-exit"></i>
   </div>`;
   player.appendChild(track);
-  const duration = document.getElementById("totalTime");
-  duration.innerHTML = `${data.duration}`;
 };
 const generateAlbum = (data) => {
   const hero = document.getElementById("hero");
@@ -51,14 +49,14 @@ const generateTrack = (trackInfo) => {
   const tracks = document.getElementById("tracks");
   trackInfo.forEach((info) => {
     const container = document.createElement("div");
-    container.classList.add("container", "d-flex", "justify-content-between");
+    container.classList.add("container", "d-flex", "justify-content-between","mt-3");
     container.innerHTML = `
   <div class="col-1">
     <p class="text-end me-2">${info.nb_tracks}</p>
   </div>
-  <div class="col-6">${info.title}<br/><span class="text-white-50">${info.artist}</span></div>
-  <div class="col-3">${info.rank}</div>
-  <div class="col-2">${info.duration}</div>
+  <div class="col-6">${info.title}<br/><span class="opacity-50">${info.artist}</span></div>
+  <div class="col-3 opacity-50">${info.rank}</div>
+  <div class="col-2 opacity-50">${info.duration}</div>
   </div>`;
     tracks.appendChild(container);
   });
@@ -78,6 +76,7 @@ const fetchFunction = function () {
       }
     })
     .then((data) => {
+      console.log(data);
       /* Oggetto albums con generazione grafica */
       const albums = {
         title: data.title,
@@ -108,13 +107,14 @@ const fetchFunction = function () {
           nb_tracks: allTracks.length + 1,
           artist: track.artist.name,
           cover: data.cover,
+          preview: track.preview,
         };
         allTracks.push(trackInfo);
       }
       generateTrack(allTracks);
       console.log(allTracks);
       /* Oggetto player con generazione grafica */
-      generatePlayer(allTracks[0]);
+      generatePlayer(allTracks[1]);
     })
     .catch((error) => {
       console.error(error.message);

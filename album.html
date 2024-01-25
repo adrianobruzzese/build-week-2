@@ -25,49 +25,206 @@
           <div class="mt-3">
             <div class="row">
               <!-- Menù a sinistra -->
-              <div class="col-3">
-                <div class="sidebar-end rounded rounded-3">
-                  <div
-                    class="navigation d-flex justify-content-between align-items-center"
-                  >
-                    <h6>Attività amici</h6>
-                    <div class="d-flex">
-                      <h4><i class="bi bi-person-plus me-1"></i></h4>
-                      <h4><i class="bi bi-x me-1"></i></h4>
-                    </div>
+              <div class="col-md-3 col-lg-2">
+                <div class="sidebar-end rounded rounded-3 scroll-snap-y">
+                  <div class="logo">
+                    <a href="#">
+                      <img
+                        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
+                        alt="Logo"
+                      />
+                    </a>
                   </div>
-                  <div class="navigation"></div>
-                  <div class="policies"></div>
+
+                  <div class="navigation">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-house"></i>
+                          <!-- icona placeholder in attesa di procurarsi quella corretta -->
+
+                          <span>Home</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-search"></i>
+                          <span>Cerca</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-collection"></i>
+                          <!-- icona placeholder in attesa di procurarsi quella corretta -->
+                          <span>La tua libreria</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="navigation">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-plus-square-fill"></i>
+                          <span>Crea playlist</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-heart-fill"></i>
+                          <span>Brani che ti piacciono</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-bookmark-star-fill"></i>
+                          <span>I tuoi episodi</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="playlist">
+                    <ul>
+                      <li>
+                        <a href="#">Hello World</a>
+                      </li>
+                      <li>
+                        <a href="#">Hermit's Grove</a>
+                      </li>
+                      <li>
+                        <a href="#">Music to expand your h...</a>
+                      </li>
+                      <li>
+                        <a href="#">Late Night Jazz</a>
+                      </li>
+                      <li>
+                        <a href="#">Music for working from...</a>
+                      </li>
+                      <li>
+                        <a href="#">Under the Radar: Neo S...</a>
+                      </li>
+                      <li>
+                        <a href="#">The Plug 🔌: Neo R&B</a>
+                      </li>
+                      <li>
+                        <a href="#">Music for Floating</a>
+                      </li>
+                      <li>
+                        <a href="#">Changing Lights</a>
+                      </li>
+                      <li>
+                        <a href="#">is this what you wanted?</a>
+                      </li>
+                      <li>
+                        <a href="#">Arctic Monkeys: Live at Roya...</a>
+                      </li>
+                      <li>
+                        <a href="#">Piombo: Italian Crime S...</a>
+                      </li>
+                      <li>
+                        <a href="#">Boom! Italian 40s Cinema Jazz</a>
+                      </li>
+                      <li>
+                        <a href="#">Closer</a>
+                      </li>
+                      <li>
+                        <a href="#">Something good can come</a>
+                      </li>
+                      <li>
+                        <a href="#">Ianus a stare</a>
+                      </li>
+                      <li>
+                        <a href="#">Vineria Sonora</a>
+                      </li>
+                      <li>
+                        <a href="#">Desert Sessions</a>
+                      </li>
+                      <li>
+                        <a href="#">In Times New Roman</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <!-- Centrale -->
-              <div class="col-7 text-white rounded rounded-3" id="central">
+              <div
+                class="col-md-7 col-lg-7 text-white rounded rounded-3 scroll-snap-y"
+                id="central"
+              >
                 <div class="row" id="hero">
-                  <div class="d-flex justify-content-start align-items-center">
-                    <h5 class="me-1 mt-3 mb-4">
-                      <i class="bi bi-arrow-left-circle"></i>
-                    </h5>
-                    <h5 class="ms-1 mt-3 mb-4">
-                      <i class="bi bi-arrow-right-circle"></i>
-                    </h5>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <h4 class="me-1 mt-3 mb-4">
+                        <i class="bi bi-arrow-left-circle text-white"></i>
+                      </h4>
+                      <h4 class="ms-1 mt-3 mb-4">
+                        <i class="bi bi-arrow-right-circle text-white"></i>
+                      </h4>
+                    </div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-dark dropdown-toggle rounded-end-5 rounded-start-5 font"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="./assets/imgs/main/image-10.jpg"
+                          class="rounded rounded-circle"
+                          alt="logo"
+                          width="20px"
+                        />
+                        Liborio Daniele Frasca
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Account</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Profilo</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Sessione Privata</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Impostazioni</a>
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Esci</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <!-- Inserisco album da js -->
                 </div>
                 <div
-                  class="d-flex justify-content-start align-items-center mt-3"
+                  class="d-flex justify-content-start align-items-center mt-3 ms-5"
                 >
                   <div>
-                    <h4 class="border border-0 rounded rounded-circle">
-                      <i class="bi bi-play-fill"></i>
-                    </h4>
+                    <h2
+                      class="border border-0 p-3 color-green border-radius-100"
+                    >
+                      <i class="bi bi-play-fill text-white"></i>
+                    </h2>
                   </div>
                   <div>
-                    <h4 class="ms-3"><i class="bi bi-heart"></i></h4>
+                    <h2 class="ms-3">
+                      <i class="bi bi-heart text-white color-green-click"></i>
+                    </h2>
                   </div>
                   <div>
-                    <h4 class="ms-3">
-                      <i class="bi bi-arrow-down-circle"></i>
-                    </h4>
+                    <h2 class="ms-3">
+                      <i class="bi bi-arrow-down-circle text-white"></i>
+                    </h2>
                   </div>
                   <div class="d-flex ms-2">
                     <div class="dropdown">
@@ -78,11 +235,11 @@
                         aria-expanded="false"
                         data-bs-offset="10,20"
                       >
-                        <h4>
-                          <i class="bi bi-three-dots p-0 m-0"></i>
-                        </h4>
+                        <h2>
+                          <i class="bi bi-three-dots p-0 m-0 text-white"></i>
+                        </h2>
                       </button>
-                      <ul class="dropdown-menu rounded rounded-0">
+                      <ul class="dropdown-menu rounded rounded-0 text-bg-light">
                         <li>
                           <a class="dropdown-item" href="#"
                             ><i class="bi bi-plus-circle me-2"></i>Aggiungi alla
@@ -124,24 +281,25 @@
                     </div>
                   </div>
                 </div>
+
                 <div id="tracks" class="row mt-3">
                   <div
-                    class="pe-1 m-0 text-end col-1 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="pe-1 m-0 text-end col-1 border border-bottom-1 border-top-0 border-start-0 border-end-0 opacity-50"
                   >
                     <p>#</p>
                   </div>
                   <div
-                    class="p-0 m-0 text-start col-6 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="p-0 m-0 text-start col-6 border border-bottom-1 border-top-0 border-start-0 border-end-0 opacity-50"
                   >
-                    TITOLO
+                    Titolo
                   </div>
                   <div
-                    class="p-0 m-0 text-start col-3 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="p-0 m-0 text-start col-3 border border-bottom-1 border-top-0 border-start-0 border-end-0 opacity-50"
                   >
-                    RIPRODUZIONE
+                    Riproduzione
                   </div>
                   <div
-                    class="p-0 m-0 col-2 border border-bottom-1 border-top-0 border-start-0 border-end-0"
+                    class="p-0 m-0 col-2 border border-bottom-1 border-top-0 border-start-0 border-end-0 opacity-50"
                   >
                     <i class="bi bi-clock"></i>
                   </div>
@@ -151,25 +309,30 @@
                   <!-- Inserisco tracks da js -->
                 </div>
               </div>
+
               <!-- Menù a destra -->
-              <div class="col-2">
-                <div class="sidebar-end rounded rounded-3">
+              <div class="col-md-2 col-lg-3">
+                <div
+                  class="sidebar-end rounded rounded-3 scroll-snap-y"
+                  id="dx"
+                >
                   <div
                     class="navigation d-flex justify-content-between align-items-center"
                   >
-                    <h6>Attività amici</h6>
+                    <h6 class="text-white">Attività amici</h6>
                     <div class="d-flex">
                       <h4><i class="bi bi-person-plus me-1"></i></h4>
                       <h4><i class="bi bi-x me-1"></i></h4>
                     </div>
                   </div>
                   <div class="navigation">
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                       <div class="col-2">
                         <img
-                          class="rounded rounded-circle"
-                          src="https://placehold.co/30"
+                          class="rounded rounded-circle ms-2"
+                          src="./assets/imgs/main/image-1.jpg"
                           alt=""
+                          width="30px"
                         />
                       </div>
                       <div class="col-8">
@@ -183,12 +346,13 @@
                       <div class="col-2"><p>1 Ora</p></div>
                     </div>
                     <hr />
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                       <div class="col-2">
                         <img
-                          class="rounded rounded-circle"
-                          src="https://placehold.co/30"
+                          class="rounded rounded-circle ms-2"
+                          src="./assets/imgs/main/image-4.jpg"
                           alt=""
+                          width="30px"
                         />
                       </div>
                       <div class="col-8">
@@ -202,12 +366,13 @@
                       <div class="col-2"><p>7 Ore</p></div>
                     </div>
                     <hr />
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                       <div class="col-2">
                         <img
-                          class="rounded rounded-circle"
-                          src="https://placehold.co/30"
+                          class="rounded rounded-circle ms-2"
+                          src="./assets/imgs/main/image-1.jpg"
                           alt=""
+                          width="30px"
                         />
                       </div>
                       <div class="col-8">
@@ -221,12 +386,13 @@
                       <div class="col-2"><p>10 Ore</p></div>
                     </div>
                     <hr />
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                       <div class="col-2">
                         <img
-                          class="rounded rounded-circle"
-                          src="https://placehold.co/30"
+                          class="rounded rounded-circle ms-2"
+                          src="./assets/imgs/main/image-3.jpg"
                           alt=""
+                          width="30px"
                         />
                       </div>
                       <div class="col-8">
@@ -240,12 +406,13 @@
                       <div class="col-2"><p>21 Ore</p></div>
                     </div>
                     <hr />
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                       <div class="col-2">
                         <img
-                          class="rounded rounded-circle"
-                          src="https://placehold.co/30"
+                          class="rounded rounded-circle ms-2"
+                          src="./assets/imgs/main/image-2.jpg"
                           alt=""
+                          width="30px"
                         />
                       </div>
                       <div class="col-8">
@@ -270,7 +437,7 @@
       <div class="music-player">
         <div class="song-bar" id="song"></div>
         <div class="progress-controller">
-          <div class="control-buttons">
+          <div onclick="playMusic()" class="control-buttons" id="playMusic">
             <i class="bi bi-shuffle greenable"></i>
             <i class="bi bi-skip-backward-fill"></i>
             <i class="bi bi-play-circle-fill" id="play"></i>
@@ -282,10 +449,10 @@
             <div class="progress-bar" id="progressBar">
               <div class="progress" id="progress"></div>
             </div>
-            <span id="totalTime"></span>
+            <span id="totalTime">0:30</span>
           </div>
         </div>
-        <div class="other-features">
+        <div class="other-features me-5">
           <i class="bi bi-list-ul greenable"></i>
           <i class="bi bi-display greenable"></i>
           <div class="volume-bar">
