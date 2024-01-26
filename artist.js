@@ -1,26 +1,40 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/9172904";
-const urlTracklist =
-  "https://striveschool-api.herokuapp.com/api/deezer/artist/9172904/top?limit=50";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+let idArtist;
+let urlTracklist;
+document.addEventListener("DOMContentLoaded", function () {
+  // Recupera i parametri dall'URL
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Ottieni il valore della variabile
+  idArtist = urlParams.get("id");
+  sessionStorage.setItem("idArtist", idArtist);
+  // Fai qualcosa con il valore ottenuto
+  console.log("Valore ricevuto:", idArtist);
+  fetchF();
+  fetchTrack();
+});
 
 const fetchF = () => {
-  fetch(url, {
+  fetch(`${url}${idArtist}`, {
     headers: {
       "Content-Type": "application/json",
     },
   })
     .then((response) => {
       if (response.ok) {
+        console.log(response);
         return response.json();
       } else {
         throw new Error("Riscontrato errore");
       }
     })
     .then((data) => {
+      const formattedRank = data.nb_fan.toLocaleString();
       console.log("data", data);
       const nameArtist = document.getElementById("name-artist");
       nameArtist.innerText = data.name;
       const ascoltatori = document.getElementById("listener");
-      ascoltatori.innerText = "Follower" + " " + data.nb_fan;
+      ascoltatori.innerText = "Follower" + " " + formattedRank;
       const imageArtist = document.getElementById("artistImg");
       imageArtist.src = data.picture_medium;
     })
@@ -28,9 +42,10 @@ const fetchF = () => {
       console.error(err);
     });
 };
-fetchF();
 
 const fetchTrack = () => {
+  urlTracklist = `https://striveschool-api.herokuapp.com/api/deezer/artist/${idArtist}/top?limit=50`;
+  console.log(urlTracklist);
   fetch(urlTracklist, {
     headers: {
       "Content-Type": "application/json",
@@ -45,6 +60,7 @@ const fetchTrack = () => {
     })
     .then((track) => {
       console.log(track);
+
       const trackList = document.getElementById("tracklist");
       const listSong = document.createElement("ol");
       listSong.innerHTML = `
@@ -71,7 +87,6 @@ const fetchTrack = () => {
       console.error(err);
     });
 };
-fetchTrack();
 
 function changeButtonText() {
   const btn = document.getElementById("btn-change");

@@ -93,3 +93,6 @@ a {
   text-decoration: none;
   color: #ffff;
 }
+.artistNameLink:hover {
+  text-decoration: underline;
+}

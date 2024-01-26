@@ -66,7 +66,12 @@ const generateAlbum = (data) => {
           <img class="me-1 rounded rounded-circle" src="${
             data.artist.picture
           }" alt="coverArtist" style="height:30px; width:30px;"/>
-          <p class="m-0" id="nameArtist">${data.artist.name} &middot;</p>
+          <p class="m-0" id="nameArtist">
+          
+          
+          ${data.artist.name} &middot;
+          
+          </p>
           <p class="m-0" id="year">${releaseYear} &middot;</p>
           <p class="m-0">${data.nb_tracks} brani,
             <span>${ore}h ${minuti}m ${secondiFormattati} s</span>
@@ -77,10 +82,10 @@ const generateAlbum = (data) => {
   hero.appendChild(container);
 };
 //Generazione Track
+
 const generateTrack = (trackInfo) => {
   const tracks = document.getElementById("tracks");
   trackInfo.forEach((info, index) => {
-
     const formattedRank = info.rank.toLocaleString();
     const container = document.createElement("div");
     container.classList.add(
@@ -99,9 +104,9 @@ const generateTrack = (trackInfo) => {
       <div class="col-1 p-2">
         <p class="text-end me-2">${index + 1}</p>
       </div>
-      <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">${
-      info.artist.name
-    }</span></div>
+      <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">
+      ${info.artist.name}
+    </a></span></div>
       <div class="col-3 p-2 opacity-50">${formattedRank}</div>
       <div class="col-2 p-2 opacity-50">${minuti}:${secondiFormattati}</div>
     `;
@@ -210,10 +215,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Controlli volume bar
+const audio = new Audio();
 document.addEventListener("DOMContentLoaded", function () {
   const volumeBar = document.getElementById("volume-bar");
   const volumeProgress = document.getElementById("volumeProgress");
 
+  audio.volume = 0.1;
+  setVolumeProgress(audio.volume);
   volumeBar.addEventListener("mousedown", function (e) {
     // Start the dragging process
     updateVolumeProgress(e);
@@ -238,11 +246,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let newWidth = e.clientX - volumeBarRect.left;
     let percentage = newWidth / volumeBarRect.width;
     percentage = Math.max(0, Math.min(1, percentage)); // Clamp between 0 and 1
+    audio.volume = percentage;
+    setVolumeProgress(percentage);
+  }
+  function setVolumeProgress(percentage) {
     volumeProgress.style.width = percentage * 100 + "%";
   }
 });
 console.log("daje", sessionStorage.getItem("albumCorrente"));
-const audio = new Audio();
 let isPlaying = false;
 
 const playMusic = () => {
