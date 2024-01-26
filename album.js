@@ -49,7 +49,7 @@ const generateAlbum = (data) => {
   const ore = Math.floor(data.duration / 3600);
   const minuti = Math.floor((data.duration % 3600) / 60);
   const secondiRimanenti = Math.floor(data.duration % 60);
-
+  console.log("ID ARTISTA", data.artist.id);
   const secondiFormattati =
     secondiRimanenti < 10 ? `0${secondiRimanenti}` : `${secondiRimanenti}`;
 
@@ -63,6 +63,7 @@ const generateAlbum = (data) => {
       <div class="row"><h1>${data.title}</h1></div>
       <div class="row">
         <div class="col-12 d-flex justify-content-start align-items-center">
+        <a href="artist.html?id=${data.artist.id}">
           <img class="me-1 rounded rounded-circle" src="${
             data.artist.picture
           }" alt="coverArtist" style="height:30px; width:30px;"/>
@@ -71,6 +72,7 @@ const generateAlbum = (data) => {
           
           ${data.artist.name} &middot;
           
+          </a>
           </p>
           <p class="m-0" id="year">${releaseYear} &middot;</p>
           <p class="m-0">${data.nb_tracks} brani,
