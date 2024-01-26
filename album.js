@@ -63,6 +63,7 @@ const generateAlbum = (data) => {
       <div class="row"><h1>${data.title}</h1></div>
       <div class="row">
         <div class="col-12 d-flex justify-content-start align-items-center">
+        <a class="artistNameLink"href="artist.html?id=${data.artist.id}">
           <img class="me-1 rounded rounded-circle" src="${
             data.artist.picture
           }" alt="coverArtist" style="height:30px; width:30px;"/>
@@ -70,7 +71,7 @@ const generateAlbum = (data) => {
           
           
           ${data.artist.name} &middot;
-          
+          </a>
           </p>
           <p class="m-0" id="year">${releaseYear} &middot;</p>
           <p class="m-0">${data.nb_tracks} brani,
@@ -105,7 +106,8 @@ const generateTrack = (trackInfo) => {
         <p class="text-end me-2">${index + 1}</p>
       </div>
       <div class="col-6 p-2">${info.title}<br/><span class="opacity-50">
-      ${info.artist.name}
+      <a class="artistNameLink"href="artist.html?id=${info.artist.id}"> 
+      ${info.artist.name} </a>
     </a></span></div>
       <div class="col-3 p-2 opacity-50">${formattedRank}</div>
       <div class="col-2 p-2 opacity-50">${minuti}:${secondiFormattati}</div>
