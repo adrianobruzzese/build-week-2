@@ -71,12 +71,7 @@ main {
   /* e per il bottone 'visualizza tutto'  */
   font-size: 0.7em;
 }
-@media (max-width: 768px) {
-  .bpmd {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
+
 .card-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -92,4 +87,7 @@ main {
 a {
   text-decoration: none;
   color: #ffff;
+}
+.artistNameLink:hover {
+  text-decoration: underline;
 }

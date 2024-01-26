@@ -28,15 +28,15 @@ body {
 
   .fixed-bottom-bar {
     position: fixed;
-    bottom: 0;
+    bottom: -16px;
     left: 0;
     width: 100%;
-    background-color: #121212; /* Colore di sfondo se necessario */
-    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1); /* Ombra sottile */
-    z-index: 1000; /* Z-index per assicurarsi che sia sopra il resto del contenuto */
+    background-color: #121212;
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
     display: flex;
     justify-content: space-around;
-    padding: 10px; /* Aggiungi spaziatura interna se necessario */
+    padding: 10px; 
   }
 
   .fixed-bottom-bar li {
@@ -46,7 +46,7 @@ body {
 
   .fixed-bottom-bar a {
     text-decoration: none;
-    color: #ffffff; /* Colore del testo */
+    color: #ffffff;
   }
 }
 .sidebar .logo img {
