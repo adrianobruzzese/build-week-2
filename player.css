@@ -189,4 +189,38 @@ i:hover {
   .music-player {
     bottom: 49px;
   }
+/* } */
+/* @media (max-width: 575px) { */
+.music-player .song-bar .icons {
+  display: none;
 }
+.music-player .other-features .volume-bar, .bi-list-ul{
+  display: none;
+}
+.music-player .other-features .bi-display{
+  font-size: 40px;
+  
+}
+.music-player .progress-controller .control-buttons .bi-shuffle, .bi-skip-backward-fill, .bi-skip-forward-fill, .bi-repeat{
+  display: none;
+}
+.music-player .progress-controller .control-buttons #play{
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+
+}
+.music-player .progress-controller .progress-container #currentTime, #totalTime {
+  display: none;
+}
+.music-player .progress-controller .progress-container .progress-bar {
+  position: absolute;
+    right: 1px;
+    bottom: 5px;
+    width: 99%;
+}
+.music-player .song-bar .song-infos .song-description {
+  width: 160px;
+}
+}
+

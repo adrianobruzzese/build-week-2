@@ -130,7 +130,7 @@
   background-color: rgba(128, 128, 128, 0.675);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hidden {
     display: none;
   }
@@ -159,4 +159,4 @@
     text-decoration: none;
     color: #ffffff;
   }
-}
+} */
