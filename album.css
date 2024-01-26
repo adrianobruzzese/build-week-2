@@ -136,15 +136,7 @@
   background-color: rgba(128, 128, 128, 0.675);
 }
 
-.artistNameLink:hover {
-  text-decoration: underline;
-}
-a {
-  text-decoration: none;
-  color: #ffff;
-  font-weight: 500;
-}
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hidden {
     display: none;
   }
@@ -174,4 +166,12 @@ a {
     color: #ffffff;
   }
 }
-*/
+.artistNameLink:hover {
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+
