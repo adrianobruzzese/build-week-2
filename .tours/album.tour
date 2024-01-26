@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "album",
+  "steps": [
+    {
+      "file": "album.js",
+      "description": "url fisso",
+      "line": 1
+    },
+    {
+      "file": "album.js",
+      "description": "troviamo l'id del URL per concatenarlo al link dell'API",
+      "line": 9
+    },
+    {
+      "file": "album.js",
+      "description": "generiamo l'album PARTE SOPRA",
+      "line": 44
+    },
+    {
+      "file": "album.js",
+      "description": "passiamo il link per andare direttamente nell'artist da album",
+      "line": 66
+    },
+    {
+      "file": "album.js",
+      "description": "Generiamo le tracks",
+      "line": 87
+    },
+    {
+      "file": "album.js",
+      "description": "convertiamo minuti sec ore",
+      "line": 99
+    },
+    {
+      "file": "album.js",
+      "description": "VOLUME BAR",
+      "line": 219
+    }
+  ],
+  "ref": "develop"
+}
