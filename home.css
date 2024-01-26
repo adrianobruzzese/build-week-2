@@ -91,3 +91,7 @@ a {
 .artistNameLink:hover {
   text-decoration: underline;
 }
+
+.music-player {
+  z-index: 2;
+}

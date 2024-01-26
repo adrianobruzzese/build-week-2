@@ -13,3 +13,12 @@
 .m-custom {
   margin-top: 100px;
 }
+
+@media (max-width: 768px) {
+  .music-player .other-features .bi-display{
+    font-size: 40px;
+    position: absolute;
+    right: 50px;
+    top: -30px;
+  }
+}
