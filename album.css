@@ -17,7 +17,8 @@
 
 .sidebar-start .logo img {
   margin-left: 1rem;
-  width: 120px;
+  padding: 20px;
+  width: 150px;
 }
 
 .navigation:nth-of-type(3) {
@@ -134,7 +135,7 @@
   .hidden {
     display: none;
   }
-  .sidebar {
+  .sidebar-start {
     max-width: 1px;
     background-color: #121212;
     padding: 0;
