@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "home",
+  "steps": [
+    {
+      "file": "home.html",
+      "description": "link artist e album",
+      "line": 437
+    }
+  ],
+  "ref": "develop"
+}
