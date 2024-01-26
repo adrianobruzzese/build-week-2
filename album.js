@@ -53,7 +53,7 @@ const generateAlbum = (data) => {
   const secondiFormattati =
     secondiRimanenti < 10 ? `0${secondiRimanenti}` : `${secondiRimanenti}`;
 
-  container.classList.add("container", "d-flex", "justify-content-between");
+  container.classList.add("hero-colonna","container", "d-flex", "justify-content-between");
   container.innerHTML = `
     <div class="col-3">
       <img src="${data.cover}" alt="coverAlbum" width="250px" height="250px" />
